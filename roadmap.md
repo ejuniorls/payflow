@@ -92,10 +92,10 @@ Transições inválidas devem ser bloqueadas no código.
 - [x] Ajustar `APP_NAME` e locale para `pt_BR`
 - [x] Configurar o Sail com MySQL, Redis e Mailpit
 - [x] Subir os containers e rodar as migrations no MySQL
-- [ ] Finalizar o Pest (`sail pest --init`) e rodar os testes
-- [ ] Configurar o Larastan (`phpstan.neon`) e validar o Pint
-- [ ] Criar pipeline no GitHub Actions rodando testes e análise estática
-- [ ] Escrever o README inicial
+- [x] Finalizar o Pest (`sail pest --init`) e rodar os testes
+- [x] Configurar o Larastan (`phpstan.neon`) e validar o Pint
+- [x] Criar pipeline no GitHub Actions rodando testes e análise estática
+- [x] Escrever o README inicial
 
 **Entregável:** projeto rodando com login e pipeline verde.
 
