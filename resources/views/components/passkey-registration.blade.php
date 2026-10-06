@@ -66,7 +66,7 @@
     }"
 >
     <template x-if="!supported">
-        <flux:text>{{ __('Passkeys are not supported in this browser.') }}</flux:text>
+        <x-text>{{ __('Passkeys are not supported in this browser.') }}</x-text>
     </template>
 
     <template x-if="supported && !showForm">
@@ -91,7 +91,7 @@
                 x-ref="passkeyNameInput"
                 x-init="$nextTick(() => $refs.passkeyNameInput?.focus())"
             />
-            <flux:text class="!mt-1">{{ __('Give this passkey a name to help you identify it later.') }}</flux:text>
+            <x-text class="!mt-1">{{ __('Give this passkey a name to help you identify it later.') }}</x-text>
 
             <p x-show="error" x-text="error" x-cloak class="text-sm text-red-600 dark:text-red-400"></p>
 

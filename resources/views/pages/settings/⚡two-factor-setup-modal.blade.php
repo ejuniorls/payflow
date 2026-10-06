@@ -178,8 +178,8 @@ new class extends Component {
                 </div>
 
                 <div class="space-y-2 text-center">
-                    <flux:heading size="lg">{{ $this->modalConfig['title'] }}</flux:heading>
-                    <flux:text>{{ $this->modalConfig['description'] }}</flux:text>
+                    <x-heading size="lg">{{ $this->modalConfig['title'] }}</x-heading>
+                    <x-text>{{ $this->modalConfig['description'] }}</x-text>
                 </div>
             </div>
 
