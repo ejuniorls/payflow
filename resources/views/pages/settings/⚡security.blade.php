@@ -173,37 +173,34 @@ new #[Title('Security settings')] class extends Component {
 
     <x-pages::settings.layout :heading="__('Update password')" :subheading="__('Ensure your account is using a long, random password to stay secure')">
         <form method="POST" wire:submit="updatePassword" class="mt-6 space-y-6">
-            <flux:input
+            <x-input
                 wire:model="current_password"
                 :label="__('Current password')"
                 type="password"
                 required
                 autocomplete="current-password"
-                viewable
             />
-            <flux:input
+            <x-input
                 wire:model="password"
                 :label="__('New password')"
                 type="password"
                 required
                 autocomplete="new-password"
                 passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
-                viewable
             />
-            <flux:input
+            <x-input
                 wire:model="password_confirmation"
                 :label="__('Confirm password')"
                 type="password"
                 required
                 autocomplete="new-password"
                 passwordrules="{{ \Illuminate\Validation\Rules\Password::defaults()->toPasswordRulesString() }}"
-                viewable
             />
 
             <div class="flex items-center gap-4">
-                <flux:button variant="primary" type="submit" data-test="update-password-button">
+                <x-button color="primary" type="submit" data-test="update-password-button">
                     {{ __('Save') }}
-                </flux:button>
+                </x-button>
             </div>
         </form>
 
@@ -220,12 +217,12 @@ new #[Title('Security settings')] class extends Component {
                             </flux:text>
 
                             <div class="flex justify-start">
-                                <flux:button
-                                    variant="danger"
+                                <x-button
+                                    color="error"
                                     wire:click="disable"
                                 >
                                     {{ __('Disable 2FA') }}
-                                </flux:button>
+                                </x-button>
                             </div>
 
                             <livewire:pages::settings.two-factor.recovery-codes :$requiresConfirmation />
@@ -237,12 +234,12 @@ new #[Title('Security settings')] class extends Component {
                             </flux:text>
 
                             <flux:modal.trigger name="two-factor-setup-modal">
-                                <flux:button
-                                    variant="primary"
+                                <x-button
+                                    color="primary"
                                     wire:click="$dispatch('start-two-factor-setup')"
                                 >
                                     {{ __('Enable 2FA') }}
-                                </flux:button>
+                                </x-button>
                             </flux:modal.trigger>
 
                             <livewire:pages::settings.two-factor-setup-modal :requires-confirmation="$requiresConfirmation" />
@@ -282,14 +279,17 @@ new #[Title('Security settings')] class extends Component {
                                     </div>
                                 </div>
 
-                                <flux:button
+                                <x-button
                                     variant="ghost"
                                     size="sm"
-                                    icon="trash"
-                                    icon:variant="outline"
+                                    shape="square"
+                                    class="text-error"
                                     wire:click="confirmDelete({{ $passkey['id'] }})"
-                                    class="text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/50"
-                                />
+                                    aria-label="{{ __('Remove passkey') }}"
+                                >
+                                    <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
+                                </x-button>
+
                             </div>
                         @empty
                             <div class="p-8 text-center">
@@ -323,18 +323,18 @@ new #[Title('Security settings')] class extends Component {
             </div>
 
             <div class="flex gap-3 justify-end">
-                <flux:button
+                <x-button
                     variant="outline"
                     wire:click="closeDeleteModal"
                 >
                     {{ __('Cancel') }}
-                </flux:button>
-                <flux:button
-                    variant="danger"
+                </x-button>
+                <x-button
+                    color="error"
                     wire:click="deletePasskey"
                 >
                     {{ __('Remove passkey') }}
-                </flux:button>
+                </x-button>
             </div>
         </div>
     </flux:modal>

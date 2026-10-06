@@ -1,0 +1,1 @@
+<a {{ $attributes->class(['link link-hover link-primary']) }}>{{ $slot }}</a>
