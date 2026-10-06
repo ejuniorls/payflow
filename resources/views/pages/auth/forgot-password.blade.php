@@ -9,18 +9,12 @@
             @csrf
 
             <!-- Email Address -->
-            <x-input
-                name="email"
-                :label="__('Email address')"
-                type="email"
-                required
-                autofocus
-                placeholder="email@example.com"
-            />
+            <x-input name="email" :label="__('Email address')" type="email" required autofocus
+                placeholder="email@example.com" />
 
-            <flux:button variant="primary" type="submit" class="w-full" data-test="email-password-reset-link-button">
+            <x-button color="primary" type="submit" block data-test="email-password-reset-link-button">
                 {{ __('Email password reset link') }}
-            </flux:button>
+            </x-button>
         </form>
 
         <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-400">

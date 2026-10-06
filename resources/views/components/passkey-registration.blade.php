@@ -71,13 +71,13 @@
 
     <template x-if="supported && !showForm">
         <div>
-            <flux:button
-                variant="primary"
-                icon="plus"
+            <x-button
+                color="primary"
                 x-on:click="showForm = true"
             >
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
                 {{ __('Add passkey') }}
-            </flux:button>
+            </x-button>
         </div>
     </template>
 
@@ -96,20 +96,20 @@
             <p x-show="error" x-text="error" x-cloak class="text-sm text-red-600 dark:text-red-400"></p>
 
             <div class="flex gap-2">
-                <flux:button
-                    variant="primary"
+                <x-button
+                    color="primary"
                     x-on:click="register()"
                     x-bind:disabled="loading || !name.trim()"
                 >
                     <span x-show="!loading">{{ __('Register passkey') }}</span>
                     <span x-show="loading" x-cloak>{{ __('Registering...') }}</span>
-                </flux:button>
-                <flux:button
+                </x-button>
+                <x-button
                     variant="ghost"
                     x-on:click="cancel()"
                 >
                     {{ __('Cancel') }}
-                </flux:button>
+                </x-button>
             </div>
         </div>
     </template>

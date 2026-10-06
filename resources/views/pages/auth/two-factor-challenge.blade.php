@@ -52,9 +52,9 @@
                         </div>
                     </div>
 
-                    <flux:button variant="primary" type="submit" class="w-full">
+                    <x-button color="primary" type="submit" block>
                         {{ __('Continue') }}
-                    </flux:button>
+                    </x-button>
                 </div>
 
                 <div class="mt-5 space-x-0.5 text-sm leading-5 text-center">

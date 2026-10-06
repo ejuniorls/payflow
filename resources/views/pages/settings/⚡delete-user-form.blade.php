@@ -2,7 +2,7 @@
 
 use Livewire\Component;
 
-new class extends Component {}; ?>
+new class extends Component { }; ?>
 
 <section class="mt-10 space-y-6">
     <div class="relative mb-5">
@@ -11,9 +11,9 @@ new class extends Component {}; ?>
     </div>
 
     <flux:modal.trigger name="confirm-user-deletion">
-        <flux:button variant="danger" data-test="delete-user-button">
+        <x-button color="error" data-test="delete-user-button">
             {{ __('Delete account') }}
-        </flux:button>
+        </x-button>
     </flux:modal.trigger>
 
     <livewire:pages::settings.delete-user-modal />
