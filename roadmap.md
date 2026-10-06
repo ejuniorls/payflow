@@ -112,7 +112,7 @@ Transições inválidas devem ser bloqueadas no código.
     - [ ] Layouts de auth (toast)
     - [ ] Telas de configurações e modais
     - [ ] Autenticação em dois fatores (OTP)
-    - [ ] Layout principal (sidebar e menu do usuário)
+    - [x] Layout principal (sidebar e menu do usuário)
     - [ ] Remover o Flux
 - [ ] Migrations e models de categorias, produtos e imagens
 - [ ] Painel admin com CRUD de categorias

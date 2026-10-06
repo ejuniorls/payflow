@@ -20,8 +20,8 @@
         </div>
 
         @unless ($compact)
-            <span class="flex-1 truncate text-start">{{ $user->name }}</span>
-            <i class="fa-solid fa-chevron-up text-xs opacity-60" aria-hidden="true"></i>
+            <span class="flex-1 truncate text-start is-drawer-close:hidden">{{ $user->name }}</span>
+            <i class="fa-solid fa-chevron-up text-xs opacity-60 is-drawer-close:hidden" aria-hidden="true"></i>
         @endunless
     </div>
 
