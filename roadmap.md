@@ -108,7 +108,7 @@ Transições inválidas devem ser bloqueadas no código.
 - [ ] Substituir o Flux UI pelo daisyUI em todas as telas (layouts, auth e settings) e remover o pacote `livewire/flux`
     - [x] Componentes de formulário: `x-button`, `x-input`, `x-link`, `x-checkbox`
     - [x] Ícones com Font Awesome
-    - [ ] Tipografia: `x-heading`, `x-text`
+    - [x] Tipografia: `x-heading`, `x-text`
     - [ ] Layouts de auth (toast)
     - [ ] Telas de configurações e modais
     - [ ] Autenticação em dois fatores (OTP)
