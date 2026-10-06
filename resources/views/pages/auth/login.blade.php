@@ -39,7 +39,7 @@
 
         <div class="space-x-1 text-sm text-center rtl:space-x-reverse text-zinc-600 dark:text-zinc-400">
             <span>{{ __('Don\'t have an account?') }}</span>
-            <x-link :href="route('register')" wire:navigate>{{ __('Sign up') }}</x-link>
+                <x-link :href="route('register')" wire:navigate>{{ __('Sign up') }}</x-link>
         </div>
     </div>
 </x-layouts::auth>

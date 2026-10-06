@@ -13,7 +13,7 @@
         <legend class="fieldset-legend">{{ $label }}</legend>
     @endif
 
-    <input @if ($name) name="{{ $name }}" id="{{ $name }}" @endif {{ $attributes->class(['input w-full', 'input-error' => $hasError]) }} />
+    <input @if ($name) name="{{ $name }}" id="{{ $name }}" @endif {{ $attributes->class(['input w-full focus:outline-none', 'input-error' => $hasError]) }} />
 
     @if ($errorKey)
         @error($errorKey)
