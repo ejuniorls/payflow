@@ -109,10 +109,10 @@ Transições inválidas devem ser bloqueadas no código.
     - [x] Componentes de formulário: `x-button`, `x-input`, `x-link`, `x-checkbox`
     - [x] Ícones com Font Awesome
     - [x] Tipografia: `x-heading`, `x-text`
-    - [x] Layouts de auth (toast)
+    - [x] Layouts de auth e toast próprio (`x-toast` com Alpine)
     - [ ] Telas de configurações e modais
     - [ ] Autenticação em dois fatores (OTP)
-    - [x] Layout principal (sidebar e menu do usuário)
+    - [x] Layout principal (sidebar recolhível e menu do usuário)
     - [ ] Remover o Flux
 - [ ] Migrations e models de categorias, produtos e imagens
 - [ ] Painel admin com CRUD de categorias
