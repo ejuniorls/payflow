@@ -94,9 +94,10 @@ new #[Title('Profile settings')]
                         <flux:text class="mt-4">
                             {{ __('Your email address is unverified.') }}
 
-                            <flux:link class="text-sm cursor-pointer" wire:click.prevent="resendVerificationNotification">
+                            <button type="button" class="link link-hover link-primary text-sm"
+                                wire:click="resendVerificationNotification">
                                 {{ __('Click here to re-send the verification email.') }}
-                            </flux:link>
+                            </button>
                         </flux:text>
 
                         @if (session('status') === 'verification-link-sent')
