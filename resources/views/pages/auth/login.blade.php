@@ -11,13 +11,13 @@
             @csrf
 
             <!-- Email Address -->
-            <flux:input name="email" :label="__('Email address')" :value="old('email')" type="email" required autofocus
+            <x-input name="email" :label="__('Email address')" :value="old('email')" type="email" required autofocus
                 autocomplete="email" placeholder="email@example.com" />
 
             <!-- Password -->
             <div class="relative">
-                <flux:input name="password" :label="__('Password')" type="password" required
-                    autocomplete="current-password" :placeholder="__('Password')" viewable />
+                <x-input name="password" :label="__('Password')" type="password" required
+                    autocomplete="current-password" :placeholder="__('Password')" />
 
                 @if (Route::has('password.request'))
                     <flux:link class="absolute top-0 text-sm end-0" :href="route('password.request')" wire:navigate>
