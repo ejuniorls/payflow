@@ -102,7 +102,18 @@ Transições inválidas devem ser bloqueadas no código.
 
 ### Fase 1: Catálogo
 
+- [x] Papéis de usuário (roles) e acesso ao painel admin protegido por Gate
+- [x] Soft delete em `users`, com o e-mail de contas excluídas reservado
+- [x] Traduções pt_BR (auth, validação, senhas e paginação)
 - [ ] Substituir o Flux UI pelo daisyUI em todas as telas (layouts, auth e settings) e remover o pacote `livewire/flux`
+    - [x] Componentes de formulário: `x-button`, `x-input`, `x-link`, `x-checkbox`
+    - [x] Ícones com Font Awesome
+    - [x] Tipografia: `x-heading`, `x-text`
+    - [x] Layouts de auth e toast próprio (`x-toast` com Alpine)
+    - [ ] Telas de configurações e modais
+    - [ ] Autenticação em dois fatores (OTP)
+    - [x] Layout principal (sidebar recolhível e menu do usuário)
+    - [ ] Remover o Flux
 - [ ] Migrations e models de categorias, produtos e imagens
 - [ ] Painel admin com CRUD de categorias
 - [ ] Painel admin com CRUD de produtos (preço, estoque, imagens, ativo/inativo)

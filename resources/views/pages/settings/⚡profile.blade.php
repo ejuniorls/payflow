@@ -2,7 +2,6 @@
 
 use App\Concerns\ProfileValidationRules;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Flux\Flux;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Computed;
@@ -42,7 +41,7 @@ new #[Title('Profile settings')]
 
         $user->save();
 
-        Flux::toast(variant: 'success', text: __('Profile updated.'));
+        $this->dispatch('toast', text: __('Profile updated.'));
     }
 
     /**
@@ -80,7 +79,7 @@ new #[Title('Profile settings')]
 <section class="w-full">
     @include('partials.settings-heading')
 
-    <flux:heading level="2" class="sr-only">{{ __('Profile settings') }}</flux:heading>
+    <x-heading level="2" class="sr-only">{{ __('Profile settings') }}</x-heading>
 
     <x-pages::settings.layout :heading="__('Profile')" :subheading="__('Update your name and email address')">
         <form wire:submit="updateProfileInformation" class="my-6 w-full space-y-6">
@@ -91,19 +90,19 @@ new #[Title('Profile settings')]
 
                 @if ($this->hasUnverifiedEmail)
                     <div>
-                        <flux:text class="mt-4">
+                        <x-text class="mt-4">
                             {{ __('Your email address is unverified.') }}
 
                             <button type="button" class="link link-hover link-primary text-sm"
                                 wire:click="resendVerificationNotification">
                                 {{ __('Click here to re-send the verification email.') }}
                             </button>
-                        </flux:text>
+                        </x-text>
 
                         @if (session('status') === 'verification-link-sent')
-                            <flux:text class="mt-2 font-medium !dark:text-green-400 !text-green-600">
+                            <x-text variant="success" class="mt-2 font-medium">
                                 {{ __('A new verification link has been sent to your email address.') }}
-                            </flux:text>
+                            </x-text>
                         @endif
                     </div>
                 @endif
