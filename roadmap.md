@@ -109,7 +109,7 @@ Transições inválidas devem ser bloqueadas no código.
     - [x] Componentes de formulário: `x-button`, `x-input`, `x-link`, `x-checkbox`
     - [x] Ícones com Font Awesome
     - [x] Tipografia: `x-heading`, `x-text`
-    - [ ] Layouts de auth (toast)
+    - [x] Layouts de auth (toast)
     - [ ] Telas de configurações e modais
     - [ ] Autenticação em dois fatores (OTP)
     - [x] Layout principal (sidebar e menu do usuário)
