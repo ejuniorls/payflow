@@ -15,7 +15,7 @@ Sistema de vendas com catálogo de produtos, carrinho e checkout, construído co
 | Backend | Laravel 13 |
 | Autenticação | Laravel Fortify (via starter kit Livewire) |
 | Banco de dados | MySQL |
-| Frontend | Blade, Tailwind CSS 4, Flux UI |
+| Frontend | Blade, Tailwind CSS 4, daisyUI 5 |
 | Interatividade | Livewire 4 com Volt |
 | Tempo real | Laravel Reverb |
 | Filas e cache | Redis |
@@ -25,7 +25,7 @@ Sistema de vendas com catálogo de produtos, carrinho e checkout, construído co
 | Qualidade | Laravel Pint, Larastan |
 | CI | GitHub Actions |
 
-> O Flux UI já vem com o starter kit e será a biblioteca de componentes do projeto. A versão gratuita cobre o básico; alguns componentes (como tabelas, gráficos e seletor de datas) fazem parte do Flux Pro, que é pago.
+> O daisyUI é a biblioteca de componentes do projeto. Ele é um plugin do Tailwind, gratuito e baseado só em classes CSS, o que cobre componentes como tabelas e paginação sem custo. O Flux UI, que veio com o starter kit, será removido: as telas existentes serão migradas para o daisyUI.
 
 ## Arquitetura
 
@@ -68,6 +68,7 @@ Drivers previstos:
 - Toda requisição e todo webhook trocado com o gateway é salvo com o payload bruto em `payment_logs`.
 - Nenhum dado de cartão é armazenado no banco, apenas tokens fornecidos pelo gateway.
 - Webhooks são idempotentes: a mesma notificação recebida duas vezes não gera efeito duplicado.
+- Usuários usam soft delete. O e-mail de uma conta excluída continua reservado; para voltar, a conta é restaurada pelo suporte.
 
 ### Tabelas principais
 
@@ -101,6 +102,7 @@ Transições inválidas devem ser bloqueadas no código.
 
 ### Fase 1: Catálogo
 
+- [ ] Substituir o Flux UI pelo daisyUI em todas as telas (layouts, auth e settings) e remover o pacote `livewire/flux`
 - [ ] Migrations e models de categorias, produtos e imagens
 - [ ] Painel admin com CRUD de categorias
 - [ ] Painel admin com CRUD de produtos (preço, estoque, imagens, ativo/inativo)

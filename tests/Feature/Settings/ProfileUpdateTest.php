@@ -68,7 +68,7 @@ class ProfileUpdateTest extends TestCase
             ->assertHasNoErrors()
             ->assertRedirect('/');
 
-        $this->assertNull($user->fresh());
+        $this->assertSoftDeleted($user);
         $this->assertFalse(auth()->check());
     }
 
@@ -84,6 +84,6 @@ class ProfileUpdateTest extends TestCase
 
         $response->assertHasErrors(['password']);
 
-        $this->assertNotNull($user->fresh());
+        $this->assertNotSoftDeleted($user);
     }
 }
